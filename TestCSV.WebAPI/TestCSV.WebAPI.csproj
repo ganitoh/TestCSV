@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestCSC.Application\TestCSV.Application.csproj" />
+    <ProjectReference Include="..\TestCSV.Domain\TestCSV.Domain.csproj" />
+    <ProjectReference Include="..\TestCSV.Infrastructure\TestCSV.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PriceItemsCsvFiles\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+</Project>
