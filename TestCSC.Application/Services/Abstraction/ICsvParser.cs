@@ -2,7 +2,7 @@
 {
     public interface ICsvParser<TEntity> where TEntity : class
     {
-        IEnumerable<TEntity> Parse(MemoryStream fileStream);
-        IEnumerable<TEntity> Parse(string filePath);
+        Task ParseAndSaveAsync(MemoryStream fileStream);
+        Task ParseAndSaveAsync(string filePath);
     }
 }

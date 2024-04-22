@@ -1,6 +1,7 @@
 using TestCSV.Infrastructure.Services.EmailWork;
 using TestCSV.Infrastructure;
 using TestCSV.Application;
+using TestCSV.WebAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddDbcontextPostgreSql(builder.Configuration["ConnectionStrings
 
 
 var app = builder.Build();
+
 if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -23,6 +25,8 @@ if (builder.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseMiddleware<ExceptionHandlerMiddleware>();
+
+app.MapControllerRoute(name: "default", pattern: "{controller}/{action}/{id?}");
 
 app.Run();

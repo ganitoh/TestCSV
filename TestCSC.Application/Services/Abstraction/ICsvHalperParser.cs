@@ -6,10 +6,10 @@ namespace TestCSV.Application.Services.Abstraction
         : ICsvParser<TEntity> 
         where TEntity : class
     {
-        IEnumerable<TEntity> Parse<TEntityMapClass>(MemoryStream fileStream) 
+        Task ParseAndSaveAsync<TEntityMapClass>(MemoryStream fileStream) 
             where TEntityMapClass : ClassMap;
 
-        IEnumerable<TEntity> Parse<TEntityMapClass>(string fileName)
+        Task ParseAndSaveAsync<TEntityMapClass>(string fileName)
             where TEntityMapClass : ClassMap;
 
     }

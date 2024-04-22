@@ -3,8 +3,6 @@ using TestCSV.Application.Services.Abstraction;
 
 namespace TestCSV.WebAPI.Controllers
 {
-
-    [Route("/")]
     [Route("/home")]
     public class HomeController : Controller
     {
@@ -16,7 +14,6 @@ namespace TestCSV.WebAPI.Controllers
         }
 
         [HttpGet("index")]
-        [HttpGet("/")]
         public IActionResult Index()
         {
             return Content("hello world!!!");
