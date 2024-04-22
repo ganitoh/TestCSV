@@ -11,7 +11,6 @@ namespace TestCSV.Infrastructure.Services.Repositories.Emplementation
         public ApplicationContext(DbContextOptions options)
             : base(options)
         {
-            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
